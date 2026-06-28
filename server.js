@@ -48,6 +48,8 @@ Plan: ${plan}
 }
 });
 
-app.listen(5501, () => {
-    console.log("Server running on https://date-invite-production.up.railway.app/send");
+const PORT = process.env.PORT || 5501;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
