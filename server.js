@@ -49,5 +49,5 @@ Plan: ${plan}
 });
 
 app.listen(5501, () => {
-    console.log("Server running on http://localhost:5501");
+    console.log("Server running on https://date-invite-production.up.railway.app/send");
 });
