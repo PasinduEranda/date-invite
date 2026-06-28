@@ -15,39 +15,6 @@ app.use(cors({
 
 app.use(express.json());
 
-// app.post("/send", async (req, res) => {
-
-//     const { location, date, time, plan } = req.body;
-
-//     let transporter = nodemailer.createTransport({
-//         service: "gmail",
-//         auth: {
-//             user: process.env.EMAIL_USER,
-//             pass: process.env.EMAIL_PASS
-//         }
-//     });
-
-//     let mailOptions = {
-//         from: process.env.EMAIL_USER,
-//         to: process.env.EMAIL_USER,
-//         subject: "New Date Plan ❤️",
-//         text: `
-// Location: ${location}
-// Date: ${date}
-// Time: ${time}
-// Plan: ${plan}
-//         `
-//     };
-
-//     try {
-//     await transporter.sendMail(mailOptions);
-//     console.log("Email sent successfully");
-//     res.json({ success: true });
-// } catch (error) {
-//     console.log("EMAIL ERROR:", error);
-//     res.json({ success: false, error: error.message });
-// }
-// });
 
 app.post("/send", async (req, res) => {
     try {
@@ -69,8 +36,8 @@ app.post("/send", async (req, res) => {
         });
 
         await transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
+            from: "mapasindu1998@gmail.com",
+            to: "mapasindu1998@gmail.com",
             subject: "New Date Plan ❤️",
             text: `Location: ${location}\nDate: ${date}\nTime: ${time}\nPlan: ${plan}`
         });
